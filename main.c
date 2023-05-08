@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-//İlk olarak düğüm yapısını oluşturuyoruz.
+//Ä°lk olarak dÃ¼ÄŸÃ¼m yapÄ±sÄ±nÄ± oluÅŸturuyoruz.
 struct dugum {
 	int degerler;
 	struct dugum *sonraki;
@@ -9,7 +9,7 @@ struct dugum {
 struct dugum *onKisim = NULL;
 struct dugum *ucKisim = NULL;
 
-//Daha sonra kuruktaki elemanları göstermek için fonskiyonumuzu yazıyoruz.
+//Daha sonra kuruktaki elemanlarÄ± gÃ¶stermek iÃ§in fonskiyonumuzu yazÄ±yoruz.
 void gostermeFonksiyonu() {
     if (onKisim == NULL) {
         printf("Kuyrukta eleman bulunmamakta.\n");
@@ -26,7 +26,7 @@ void gostermeFonksiyonu() {
     }
     
 }
-//Ekleme fonksiyonunu yazıyoruz.
+//Ekleme fonksiyonunu yazÄ±yoruz.
 void eklemeFonksiyonu(int deger) {
     struct dugum* yeniDugum = (struct dugum*)malloc(sizeof(struct dugum));
     yeniDugum->degerler = deger;
@@ -41,7 +41,7 @@ void eklemeFonksiyonu(int deger) {
     
     printf("%d kuyruga eklendi.\n", deger);
 }
-//Silme fonksiyonunu yazıyoruz.Kuyruk yapıları FIFO yapısında çalıştığı için ilk eklenen eleman ilk siliniyor.
+//Silme fonksiyonunu yazÄ±yoruz.Kuyruk yapÄ±larÄ± FIFO yapÄ±sÄ±nda Ã§alÄ±ÅŸtÄ±ÄŸÄ± iÃ§in ilk eklenen eleman ilk siliniyor.
 void silmeFonksiyonu() {
     if (onKisim == NULL) {
         printf("Kuyrukta eleman bulunmamakta.\n");
@@ -65,7 +65,7 @@ int main(int argc, char *argv[]) {
 	printf("Kullanicinin secimleriyle ekleme,silme ve goruntuleme islemleri yapabilir.\n");
 	printf("************************************************\n");
 	
-	//Programın çıkış seçeneğini seçmeden sonlanmaması için while döngüsüne 1 değerini atayarak işlemleri döngüye sokuyoruz.
+	//ProgramÄ±n Ã§Ä±kÄ±ÅŸ seÃ§eneÄŸini seÃ§meden sonlanmamasÄ± iÃ§in while dÃ¶ngÃ¼sÃ¼ne 1 deÄŸerini atayarak iÅŸlemleri dÃ¶ngÃ¼ye sokuyoruz.
 	
 	int kullaniciSecim,islemYapilanEleman;
 	while(1){
@@ -78,22 +78,26 @@ int main(int argc, char *argv[]) {
 	printf("Istediginiz islemin rakamini giriniz.\n");
 	scanf("%d",&kullaniciSecim);
 	
-    //Switch-case yapısını kullanarak işlemlerimizi yaptırıyoruz.
+    //Switch-case yapÄ±sÄ±nÄ± kullanarak iÅŸlemlerimizi yaptÄ±rÄ±yoruz.
 	switch(kullaniciSecim){
 		case 1:
+			printf("Secimizin 1\n");
 			gostermeFonksiyonu();
 			break;
 			
 		case 2:
+			printf("Secimizin 2\n");
 			printf("Eklemek istediginiz elemani giriniz\n");
 			scanf("%d",&islemYapilanEleman);
 			eklemeFonksiyonu(islemYapilanEleman);
 			break;
 		case 3:
+			printf("Secimizin 3\n");
 			silmeFonksiyonu();
 			break;
 			
 		case 4:
+			printf("Secimizin 4\n");
 		    printf("Uygulama kapatiliyor...\n");	
 		    return 0;
 		
